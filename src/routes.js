@@ -3,11 +3,29 @@ import { Router } from 'express';
 const routes = Router();
 
 /**
- * GET home page
+ * GET home
  */
 routes.get('/', (req, res) => {
   res.json({
-    msg: 'test'
+    response: 'Comuquinho api'
+  });
+});
+
+/**
+ * GET winner
+ */
+routes.get('/winner', (req, res) => {
+  res.json({
+    response: 'Ganhador'
+  });
+});
+
+/**
+ * POST addToList
+ */
+routes.get('/add-to-list', (req, res) => {
+  res.json({
+    response: 'Adiciona usuário a lista'
   });
 });
 
