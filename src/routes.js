@@ -27,7 +27,7 @@ routes.get('/winner', (req, res) => {
     if (names.length) fs.writeFile(database, JSON.stringify({ names: [] }));
     
     res.json({
-      response: names.length ? names[winner]['name'] : "Sem ganhador"
+      response: names.length > 0 ? names[winner]['name'] : "Sem ganhador"
     });
   });  
 });
@@ -59,7 +59,7 @@ routes.post('/add-to-list', (req, res) => {
     fs.writeFile(database, JSON.stringify({ names: newWinners }))
   })
   
-  res.json({response: 'adicionado'})
+  res.json({response:'adicionado'})
 });
 
 /**
