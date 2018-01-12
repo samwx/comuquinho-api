@@ -24,13 +24,11 @@ routes.get('/winner', (req, res) => {
     if (err) throw err;
     const { names } = JSON.parse(content);
 
-    var ganhador = Math.floor((Math.random()*names.length));
+    var winner = Math.floor((Math.random()*names.length));
     res.json({
-      response: names[ganhador]['name']
+      response: names[winner]['name']
     });
-  });
-  
-  
+  });  
 });
 
 /**
