@@ -5,10 +5,11 @@ const routes = Router();
 /**
  * GET home
  */
-routes.get('/', (req, res) => {
-  res.json({
-    response: 'Comuquinho api'
-  });
+routes.get('/', () => {
+  console.log('teste'); // eslint-disable-line no-console
+  // res.json({
+  //   response: 'Comuquinho api'
+  // });
 });
 
 /**
