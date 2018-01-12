@@ -1,5 +1,5 @@
 import { Router } from 'express';
-const fs = require('fs');
+import fs from 'fs';
 
 const routes = Router();
 
@@ -24,7 +24,7 @@ routes.get('/winner', (req, res) => {
     if (err) throw err;
     const { names } = JSON.parse(content);
 
-    var ganhador = Math.floor((Math.random()*names.length)+1);
+    var ganhador = Math.floor((Math.random()*names.length));
     res.json({
       response: names[ganhador]['name']
     });
@@ -36,10 +36,22 @@ routes.get('/winner', (req, res) => {
 /**
  * POST addToList
  */
-routes.get('/add-to-list', (req, res) => {
+routes.post('/add-to-list', (req, res) => {
+  const database = 'src/mock.json';
+
+  fs.readFile(database, (err, content) => {
+    if (err) throw err
+    const { names } = JSON.parse(content)
+    const { winner } = req.body
+
+    const newWinners = names.concat(winner)
+
+    fs.writeFile(database, JSON.stringify({ names: newWinners }))
+  })
+  
   res.json({
-    response: 'Adiciona usuário a lista'
-  });
+    response: 'Usuário adicionado'
+  })
 });
 
 /**
