@@ -15,8 +15,10 @@ routes.get('/', (req, res) => {
  * GET winner
  */
 routes.get('/winner', (req, res) => {
+  var data = JSON.parse('mock.json');
+  var ganhador = Math.floor((Math.random()*data['names'].length)+1);
   res.json({
-    response: 'Ganhador'
+    response: data['names'][ganhador]['name']
   });
 });
 
