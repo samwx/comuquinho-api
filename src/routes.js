@@ -25,8 +25,11 @@ routes.get('/winner', (req, res) => {
     const { names } = JSON.parse(content);
 
     var winner = Math.floor((Math.random()*names.length));
+
+    if (names.length) fs.writeFile(database, JSON.stringify({ names: [] }));
+    
     res.json({
-      response: names[winner]['name']
+      response: names.length ? names[winner]['name'] : "Sem ganhador"
     });
   });  
 });
