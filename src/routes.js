@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import fs from 'fs';
 
 const routes = Router();
 
@@ -15,10 +16,17 @@ routes.get('/', (req, res) => {
  * GET winner
  */
 routes.get('/winner', (req, res) => {
-  var data = JSON.parse('mock.json');
-  var ganhador = Math.floor((Math.random()*data['names'].length)+1);
+
+  const database = 'src/mock.json';
+
+  fs.readfile(database, (err, content) => {
+    if (err) throw err;
+    const { names } = JSON.parse(content);
+  });
+
+  var ganhador = Math.floor((Math.random()*names.length)+1);
   res.json({
-    response: data['names'][ganhador]['name']
+    response: names[ganhador]['name']
   });
 });
 
