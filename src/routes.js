@@ -16,9 +16,7 @@ routes.get('/', (req, res) => {
  * GET winner
  */
 routes.get('/winner', (req, res) => {
-
   const database = 'src/mock.json';
-
 
   fs.readFile(database, (err, content) => {
     if (err) throw err;
@@ -30,6 +28,17 @@ routes.get('/winner', (req, res) => {
     });
   });  
 });
+
+routes.get('/names', (req, res) => {
+  const database = 'src/mock.json';
+
+  fs.readFile(database, (err, content) => {
+    if (err) throw err;
+    const { names } = JSON.parse(content);
+    
+    res.json(names)
+  })
+})
 
 /**
  * POST addToList
