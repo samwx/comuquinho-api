@@ -7,7 +7,7 @@ const routes = Router();
  */
 routes.get('/', (req, res) => {
   res.json({
-    response: 'Comuquinho api'
+    response: 'Comuquinho-api'
   });
 });
 
