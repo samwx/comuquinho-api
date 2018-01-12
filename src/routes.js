@@ -59,9 +59,7 @@ routes.post('/add-to-list', (req, res) => {
     fs.writeFile(database, JSON.stringify({ names: newWinners }))
   })
   
-  res.json({
-    response: 'Usuário adicionado'
-  })
+  res.json({response: 'adicionado'})
 });
 
 /**
