@@ -1,25 +1,24 @@
 {
-	names: [
+	"names": [
 		{
-			name: 'Julio Santos',
-			email: 'juliosantos@dayrep.com'
+			"name": "Julio Santos",
+			"email": "juliosantos@dayrep.com"
 		},
 		{
-			name: 'Vitoria Correia',
-			email: 'vitoriacorreia@dayrep.com'
+			"name": "Vitoria Correia",
+			"email": "vitoriacorreia@dayrep.com"
 		},
 		{
-			name: 'Sofia Goncalves',
-			email: 'sofiagoncalves@dayrep.com'
+			"name": "Sofia Goncalves",
+			"email": "sofiagoncalves@dayrep.com"
 		},
 		{
-			name: 'Erick Azevedo',
-			email: 'erickazevedo@dayrep.com'
+			"name": "Erick Azevedo",
+			"email": "erickazevedo@dayrep.com"
 		},
 		{
-			name: 'Diego Cardoso',
-			email: 'deigocardoso@dayrep.com'
-		},
-
+			"name": "Diego Cardoso",
+			"email": "deigocardoso@dayrep.com"
+		}
 	]
 }
